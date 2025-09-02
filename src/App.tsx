@@ -7,6 +7,7 @@ import Cocktails from "./features/home/components/Cocktails";
 import AboutPage from "./features/about/aboutPage";
 import ArtPage from "./features/art/artPage";
 import MenuPage from "./features/menu/meanPage";
+import ContactPage from "./features/contact/contactPage";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -19,6 +20,7 @@ const App = () => {
       <AboutPage />
       <ArtPage />
       <MenuPage />
+      <ContactPage />
     </main>
   );
 };
