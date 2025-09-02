@@ -1,6 +1,36 @@
+import { useGSAP } from "@gsap/react";
 import { openingHours, socials } from "../../constants";
+import gsap from "gsap";
+import { SplitText } from "gsap/all";
 
 const ContactPage = () => {
+  useGSAP(() => {
+    const titleSplit = SplitText.create("#contact h2", {
+      type: "words",
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#contact",
+        start: "top center",
+      },
+      ease: "power1.inOut",
+    });
+
+    tl.from(titleSplit.words, {
+      yPercent: 100,
+      opacity: 0,
+      stagger: 0.02,
+    })
+      .from("#contact h3, #contact p", {
+        yPercent: 100,
+        opacity: 0,
+        stagger: 0.02,
+      })
+      .to("#f-right-leaf", { y: -50, duration: 1, ease: "power1.inOut" })
+      .to("#f-left-leaf", { y: -50, duration: 1, ease: "power1.inOut" }, "<");
+  }, []);
+
   return (
     <footer id="contact">
       <img
