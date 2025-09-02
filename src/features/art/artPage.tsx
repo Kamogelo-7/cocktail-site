@@ -3,7 +3,7 @@ import { featureLists, goodLists } from "../../constants";
 import { useMediaQuery } from "react-responsive";
 import gsap from "gsap";
 
-const Art = () => {
+const ArtPage = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   useGSAP(() => {
@@ -87,4 +87,4 @@ const Art = () => {
   );
 };
 
-export default Art;
+export default ArtPage;
