@@ -57,11 +57,11 @@ const Hero = () => {
       },
     });
 
-    videoRef.current.onloadedmetadata = () => {
-      tl.to(videoRef.current, {
-        currentTime: videoRef.current.duration,
+    videoRef.current?.addEventListener("loadedmetadata", () => {
+      tl.to(videoRef.current!, {
+        currentTime: videoRef.current!.duration,
       });
-    };
+    });
   }, []);
   return (
     <>
